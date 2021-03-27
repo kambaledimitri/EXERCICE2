@@ -19,22 +19,21 @@ if(move_uploaded_file($_FILES['PHOTO']['tmp_name'],'images/'.$url_img)){
   
             $req = $db->prepare('INSERT INTO ETUDIANT(NOM,POST_NOM,PRENOM,SEXE,EMAIL,TELEPHONE,PHOTO,PROMOTION,SECTION) VALUES (:NOM,:POST_NOM,:PRENOM,:SEXE,:EMAIL,:TELEPHONE,:PHOTO,:PROMOTION,:SECTION)');
             $req->execute(array(
-            'NOM'=>$_POST['Nom'],
+            'NOM'=> $_POST['Nom'],
             'POST_NOM' => $_POST['Post-nom'],
             'PRENOM' => $_POST['Prenom'],
             'SEXE' => $_POST['Sexe'],
             'EMAIL' => $_POST['Email'],
             'TELEPHONE' => $_POST['Telephone'],
-            'PHOTO' =>$_FILES['PHOTO']['name'],
+            'PHOTO' => $_FILES['PHOTO']['name'],
             'PROMOTION' => $_POST['Promotion'],
             'SECTION' => $_POST['Section']
             ));
             if ($req) {
-                 
-                echo "valide";
-            }else{
-                echo "err";
-            }
+              echo "valide";
+        }else{
+          echo "err";
+        }
 
 // header('location:form-basic.php');
 return true;

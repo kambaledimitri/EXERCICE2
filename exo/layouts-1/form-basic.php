@@ -68,37 +68,11 @@
         <section class="main-content">
             <div class="row">
                 <div class="col-sm-12">
-                    <div class="card">
-                       
-                        <div class="card-body">
-                            <form method="POST" action="layouts-1/Etudiant.php">
-                           
-                                   <div class="form-group">
-										<label>File Input</label>
-										<div class="fileinput-new" data-provides="fileinput">
-										  <div class="fileinput-preview" data-trigger="fileinput" style="width: 150px; height:100px;"></div>
-											<span class="btn btn-primary  btn-file">
-												<span class="fileinput-new">Select</span>
-												<span class="fileinput-exists">Change</span>
-												<input type="file" id="image" name="PHOTO">
-											</span>
-											<a href="#" class="btn btn-danger fileinput-exists" data-dismiss="fileinput">Remove</a>
-										</div>
-									</div>
-
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-		
-            <div class="row">
-                <div class="col-sm-12">
                     
                     <div class="card">
                        
                         <div class="card-body">
-                            <form role="form">
+                            <form method="POST" action="Etudiant.php">
                                 <div class="row">
                                     <div class="col-sm-6">
                                         <div class="form-group ">
@@ -115,9 +89,19 @@
                                             </select>
                                             
                                         </div>
-                                       
-                                            
+                                        <label>File Input</label>
+										<div class="fileinput-new" data-provides="fileinput">
+										  <div class="fileinput-preview" data-trigger="fileinput" style="width: 100px; height:80px;"></div>
+											<span class="btn btn-primary  btn-file">
+												<span class="fileinput-new">Select</span>
+												<span class="fileinput-exists">Change</span>
+												<input type="file" name="PHOTO">
+											</span>
+											<a href="#" class="btn btn-danger fileinput-exists" data-dismiss="fileinput">Remove</a>
+										</div>
+                                                
                                     </div>
+
                                     <div class="col-sm-6">
                                         <div class="form-group">
                                            
@@ -140,10 +124,14 @@
                                                 <option >MATH-PHISIQUE</option>
                                                 <option >BIOLOGIE-CHIMIE</option>
                                             </select>
+                                            
+										
+									</div>
+                                    <input type="submit" class="btn btn-primary btn-lg" value="ENREGISTRER" name="enregistrer">
                                         </div>
                                     </div>
 								</div>
-                                <button type="submit" class="btn btn-sm btn-primary">ENREGISTRER</button>
+                               
                                 <div class="card-body">
                                 <table id="datatable2" class="table table-striped dt-responsive nowrap">
                                     <thead>
