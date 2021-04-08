@@ -44,7 +44,7 @@
                                <li class="nav-item"><a class="nav-link" href="reservation.php">RESERVE</a></li>
 							</ul>
                             <ul class="nav-second-level nav flex-column sub-menu" aria-expanded="false">
-                               <li class="nav-item"><a class="nav-link" href="form-basic.php">ETUDIANTS</a></li>
+                               <li class="nav-item"><a class="nav-link" href="ETUDIANT_.php">ETUDIANTS</a></li>
 							</ul>
                         </li>
                        
@@ -60,7 +60,7 @@
 						<li class="nav-item">
                             <a class="nav-link"  href="javascript: void(0);" aria-expanded="false"><i class="fa fa-shopping-cart"></i> <span class="toggle-none">E-Commerce <span class="fa arrow"></span></span></a>
                             <ul class="nav-second-level nav flex-column sub-menu" aria-expanded="false">
-								<li class="nav-item"><a class="nav-link" href="ecommerce-add.html">Add Product</a></li>
+								<li class="nav-item"><a class="nav-link" href="ARTICLE_.php">ARTICLE</a></li>
                                 <li class="nav-item"><a class="nav-link" href="ecommerce-products.html">All Products</a></li>
                                
                             </ul>

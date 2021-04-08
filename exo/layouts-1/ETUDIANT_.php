@@ -1,4 +1,11 @@
-<!DOCTYPE html>
+
+<?php 
+  include 'bd/connection.php';
+ 
+ $recuperation = $db->query('SELECT * FROM Etudiant');
+
+ ?>
+ <!DOCTYPE html>
 <html lang="en">
 
 <!-- Mirrored from www.aksisweb.com/theme/fixed/layouts-1/form-basic.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 02 Feb 2021 22:28:30 GMT -->
@@ -77,11 +84,11 @@
                                     <div class="col-sm-6">
                                         <div class="form-group ">
                                             <label>Nom</label>
-                                            <input type="text" placeholder="Nom" class="form-control">
+                                            <input type="text" placeholder="Nom" name="Nom">
                                             <label>Post-Nom</label>
-                                            <input type="text" placeholder="Post-non" class="form-control">
+                                            <input type="text" placeholder="Post-non" name="Post_Nom">
                                             <label>Prenom</label>
-                                            <input type="text" placeholder="Prenom" class="form-control">
+                                            <input type="text" placeholder="Prenom" name="Prenom">
                                             <label>Sexe</label>
                                             <select class="form-control" type="Text" name="Sexe">
                                                 <option >HOMME</option>
@@ -89,7 +96,7 @@
                                             </select>
                                             
                                         </div>
-                                        <label>File Input</label>
+                                        <!-- <label>IMAGE</label>
 										<div class="fileinput-new" data-provides="fileinput">
 										  <div class="fileinput-preview" data-trigger="fileinput" style="width: 100px; height:80px;"></div>
 											<span class="btn btn-primary  btn-file">
@@ -98,7 +105,7 @@
 												<input type="file" name="IMAGE">
 											</span>
 											<a href="#" class="btn btn-danger fileinput-exists" data-dismiss="fileinput">Remove</a>
-										</div>
+										</div> -->
                                                 
                                     </div>
 
@@ -106,9 +113,9 @@
                                         <div class="form-group">
                                            
                                             <label>Email address</label>
-                                            <input type="email" placeholder="Enter email" class="form-control"name="email">
+                                            <input type="email" placeholder="Enter email" name="Email">
                                             <label>Telephone *</label>
-                                            <input type="text" class="form-control" name="Telephone">
+                                            <input type="text" name="Telephone">
                                             <label>Promotion</label>
                                             <select class="form-control" type="Text" name="Promotion">
                                                 <option >PREMIERE</option>
@@ -137,45 +144,44 @@
                                     <thead>
                                         <tr>
                                             <th class="text-center">
-                                                <strong>ID</strong>
+                                                <strong>#</strong>
                                             </th>
                                             <th class="text-center">
-                                                <strong>Name</strong>
+                                                <strong>Nom</strong>
                                             </th>
                                             <th class="text-center">
-                                                <strong>Description</strong>
+                                                <strong>Post-nom</strong>
                                             </th>
                                             <th class="text-center">
-                                                <strong>Price</strong>
+                                                <strong>Promotion</strong>
                                             </th>
                                             <th class="text-center">
-                                                <strong>Status</strong>
+                                                <strong>Section</strong>
                                             </th>
                                             <th class="text-center">
-                                                <strong>Added</strong>
+                                                <strong>Telephone</strong>
                                             </th>
                                             <th class="text-center">
                                                 <strong>Action</strong>
                                             </th>
                                         </tr>
                                     </thead>
+                                    <?php while ($ligne = $recuperation->fetch()) {?>
                                     <tbody>
                                         <tr>
-                                            <td>0001</td>
-                                            <td>Product 1</td>
-                                            <td>Description for Product</td>
-                                            <td>$ 12.20</td>
+                                            <td><?=$ligne['ID'];?></td>
+                                            <td><?=$ligne['NOM'];?></td>
+                                            <td><?=$ligne['POST_NOM'];?></td>
+                                            <td><?=$ligne['PROMOTION'];?></td>
+                                            <td> <?=$ligne['SECTION'];?></td>
+                                            
+                                            <td><?=$ligne['TELEPHONE'];?></td>
                                             <td class="text-center">
-                                                <span class="label label-success">Stock</span>
-                                            </td>
-                                            <td>15/07/2018</td>
-                                            <td class="text-center">
-                                                <button type="button" class="btn btn-sm btn-default"><i class="fa fa-search"></i></button>
 												<button type="button" class="btn btn-sm btn-success"><i class="fa fa-edit"></i></button>
 												<button type="button" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></button>
                                             </td>
                                         </tr>
-                                       
+                                        <?php } ?>
                                     </tbody>
                                 </table>
                         </div>
