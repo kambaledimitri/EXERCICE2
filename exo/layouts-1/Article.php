@@ -1,12 +1,12 @@
-<?php 
-// include 'bd/connection.php'; 
-function imgup()
-{
-    $TITRE=htmlspecialchars($_POST['titre']);
-    $DESCRIPTION=htmlspecialchars($_POST['description']);
-    $url_img= basename($_FILES['PHOTO']['name']);
+<?php  
 
-$verif_img= getimagesize($_FILES['PHOTO']['tmp_name']);
+ function imgup()
+{
+  
+  $url_img=basename($_FILES['PHOTO']['name']);
+  $TITRE=htmlspecialchars($_POST['titre']);
+  $DESCRIPTION=htmlspecialchars($_POST['description']);
+  $verif_img=getimagesize($_FILES['PHOTO']['tmp_name']);
 
   if (isset($_FILES['PHOTO']) AND $_FILES['PHOTO']['error']== 0){
 if ($_FILES['PHOTO']['size'] <= 2000000){
@@ -20,19 +20,15 @@ $extensions_autorisees = array('jpg', 'jpeg', 'gif','png','JPG','JPEG','GIF','PN
 if(move_uploaded_file($_FILES['PHOTO']['tmp_name'],'images/'.$url_img)){
    require 'bd/connection.php';
   
-   $req = $db->prepare('INSERT INTO ARTICE(TITRE,DESCRIPTION_,PHOTO) VALUES (:TITRE,:DESCRIPTION_,:PHOTO)');
+            $req=$db->prepare('INSERT INTO Article(TITRE,DESCRIPTION_,PHOTO,DATE_POSTE) VALUES (:TITRE,:DESCRIPTION_,:PHOTO)');
             $req->execute(array(
-            'TITRE'=> $TITRE,
-            'DESCRIPTION_' => $DESCRIPTION,
-            'PHOTO' => $_FILES['PHOTO']['name']
-           
-            ));
-            if ($req) {
-              echo "valide";
-        }else{
-          echo "err";
-        }
-        // header('location:form-basic.php');
+            'PHOTO' => $_FILES['PHOTO']['name'],
+            'TITRE' => $TITRE,
+            'DESCRIPTION' => $DESCRIPTION ));
+            
+        
+
+echo "valider";
 return true;
 
 }
@@ -46,6 +42,8 @@ return true;
 
           unlink($_FILES['PHOTO']['tmp_name']);
           unset($_FILES['PHOTO']);
+
+
 
       }
     }
@@ -63,5 +61,3 @@ if(imgup()){
 // var_dump($_FILES);
 
 ?>
-
-
