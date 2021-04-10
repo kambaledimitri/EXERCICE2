@@ -20,7 +20,7 @@ $extensions_autorisees = array('jpg', 'jpeg', 'gif','png','JPG','JPEG','GIF','PN
 if(move_uploaded_file($_FILES['PHOTO']['tmp_name'],'images/'.$url_img)){
    require 'bd/connection.php';
   
-            $req=$db->prepare('INSERT INTO Article(TITRE,DESCRIPTION_,PHOTO,DATE_POSTE) VALUES (:TITRE,:DESCRIPTION_,:PHOTO)');
+            $req=$db->prepare('INSERT INTO Article(TITRE,DESCRIPTION_,PHOTO) VALUES (:TITRE,:DESCRIPTION_,:PHOTO)');
             $req->execute(array(
             'PHOTO' => $_FILES['PHOTO']['name'],
             'TITRE' => $TITRE,

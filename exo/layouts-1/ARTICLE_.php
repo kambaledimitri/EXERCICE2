@@ -73,11 +73,11 @@
                        
                         <div class="card-body">
 							
-                            <form method="POST" action="Article.php" class="form-horizontal">
+                            <form method="POST" action="Article.php" class="form-horizontal" enctype="multipart/form-data" >
 							
 									<div class="form-group">
 										<label>Titre</label>
-										<input type="text" placeholder="Titre" class="form-control form-control-rounded"name="titre">
+										<input type="text" placeholder="Titre" class="form-control form-control-rounded" name="titre">
 									</div>
 								
                                     <div class="form-group">
