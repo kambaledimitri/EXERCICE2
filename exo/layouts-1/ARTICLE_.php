@@ -82,7 +82,7 @@
 								
                                     <div class="form-group">
                                         <label>Description</label>
-                                        <input class="summernote" style="display: none;"type="text" name="description">
+                                        <input type="text" class="summernote" style="display: none;" name="description">
                                     </div>
 
                                     <div class="form-group">

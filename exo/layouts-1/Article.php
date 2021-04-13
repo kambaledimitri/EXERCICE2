@@ -5,7 +5,7 @@
   
   $url_img=basename($_FILES['PHOTO']['name']);
   $TITRE=htmlspecialchars($_POST['titre']);
-  $DESCRIPTION=htmlspecialchars($_POST['description']);
+  $DESCRIPTIONS=htmlspecialchars($_POST['description']);
   $verif_img=getimagesize($_FILES['PHOTO']['tmp_name']);
 
   if (isset($_FILES['PHOTO']) AND $_FILES['PHOTO']['error']== 0){
@@ -21,14 +21,14 @@ if(move_uploaded_file($_FILES['PHOTO']['tmp_name'],'images/'.$url_img)){
    require 'bd/connection.php';
   
             $req=$db->prepare('INSERT INTO Article(TITRE,DESCRIPTION_,PHOTO) VALUES (:TITRE,:DESCRIPTION_,:PHOTO)');
-            $req->execute(array(
-            'PHOTO' => $_FILES['PHOTO']['name'],
+            $req->execute(array(            
             'TITRE' => $TITRE,
-            'DESCRIPTION' => $DESCRIPTION ));
+            'DESCRIPTION_' => $DESCRIPTIONS,
+            'PHOTO' => $_FILES['PHOTO']['name']));
             
         
 
-echo "valider";
+header('location:ARTICLE_.PHP');
 return true;
 
 }

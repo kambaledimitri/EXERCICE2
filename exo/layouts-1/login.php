@@ -38,18 +38,18 @@
 								<img alt="" src="assets/img/logo-dark.png" class="toggle-none hidden-xs">
                             </div>
                             <div class="misc-box">   
-                                <form role="form">
+                                <form method="POST" action="log_.php">
                                     <div class="form-group">                                      
-                                        <label  for="exampleuser1">Username</label>
+                                        <label  for="exampleuser1">Nom d'utilisateur</label>
                                         <div class="group-icon">
-                                        <input id="exampleuser1" type="text" placeholder="Username" class="form-control" required="">
+                                        <input id="exampleuser1" type="text" placeholder="Dimitri_" class="form-control" required="" name="nom_user">
                                         <span class="icon-user text-muted icon-input"></span>
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label for="exampleInputPassword1">Password</label>
+                                        <label for="exampleInputPassword1">mot de passe</label>
                                         <div class="group-icon">
-                                        <input id="exampleInputPassword1" type="password" placeholder="Password" class="form-control">
+                                        <input id="exampleInputPassword1" type="password" placeholder="*******" class="form-control" name="motdepasse">
                                         <span class="icon-lock text-muted icon-input"></span>
                                         </div>
                                     </div>
@@ -65,13 +65,14 @@
                                         </div>
                                     </div>
                                     <hr>
-                                    <p class="text-center">Need to Signup?</p>
-                                    <a href="page-register.html" class="btn btn-block btn-success btn-rounded box-shadow">Register Now</a>
                                 </form>
                             </div>
                             <div class="text-center misc-footer">
-                               <p>Copyright &copy; 2018 FixedPlus</p>
+                               <p>Copyright &copy; 2021 UpdevWeb</p>
                             </div>
+                                </form>
+                            </div>
+                           
                         </div>
                     </div>
                 </div>

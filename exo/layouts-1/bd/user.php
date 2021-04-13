@@ -27,21 +27,21 @@ public function con($user_id){
 
 
 	$_SESSION['user'][$user_id]= $user_id;	
-	$connexion=$this->DB->prepare('SELECT * FROM admin WHERE ID_ADMIN=:ID_ADMIN  ');
+	$connexion=$this->DB->prepare('SELECT * FROM utilisateur WHERE ID=:ID ');
  $connexion->execute(array(
-'ID_ADMIN' => $user_id
+'ID' => $user_id
 ));
 $con=$connexion->fetchAll(PDO::FETCH_OBJ);
 foreach ($con as $user ) {
 
-	$_SESSION['user']['ID_ADMIN']= $user->ID_ADMIN;
-	$_SESSION['user']['name']= $user->name;
-	$_SESSION['user']['email']= $user->email;
-	$_SESSION['user']['username']= $user->username;
-	$_SESSION['user']['user_type']= $user->user_type;
-	$_SESSION['user']['telephone']= $user->telephone;
-	$_SESSION['user']['adresse']= $user->adresse;
-	// $_SESSION['user']['PHOTO']= $user->PHOTO;
+	$_SESSION['user']['ID']= $user->ID;
+	$_SESSION['user']['NOM']= $user->NOM;
+	$_SESSION['user']['POST_NOM']= $user->POST_NOM;
+	$_SESSION['user']['USERNAME']= $user->USERNAME;
+	$_SESSION['user']['PHOTO']= $user->PHOTO;
+	$_SESSION['user']['EMAIL']= $user->EMAIL;
+	$_SESSION['user']['TELEPHONE']= $user->TELEPHONE;
+	$_SESSION['user']['MOTDEPASSE']= $user->MOTDEPASSE;
 	
 
 

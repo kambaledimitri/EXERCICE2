@@ -2,7 +2,7 @@
 <?php 
   include 'bd/connection.php';
  
- $recuperation = $db->query('SELECT * FROM Etudiant');
+ $recuperation = $db->query('SELECT * FROM utilisateur');
 
  ?>
  <!DOCTYPE html>
@@ -79,7 +79,7 @@
                     <div class="card">
                        
                         <div class="card-body">
-                            <form method="POST" action="Etudiant.php">
+                            <form method="POST" action="Etudiant.php"  enctype="multipart/form-data">
                                 <div class="row">
                                     <div class="col-sm-6">
                                         <div class="form-group ">
@@ -88,12 +88,10 @@
                                             <label>Post-Nom</label>
                                             <input type="text" placeholder="Post-non" name="Post_Nom">
                                             <label>Nom d'utilisateur</label>
-                                            <input type="text" placeholder="Prenom" name="Prenom">
-                                            <label>Sexe</label>
-                                            
+                                            <input type="text" placeholder="Username" name="Prenom">
                                             
                                         </div>
-                                        <!-- <label>IMAGE</label>
+                                        <label>IMAGE</label>
 										<div class="fileinput-new" data-provides="fileinput">
 										  <div class="fileinput-preview" data-trigger="fileinput" style="width: 100px; height:80px;"></div>
 											<span class="btn btn-primary  btn-file">
@@ -102,7 +100,7 @@
 												<input type="file" name="IMAGE">
 											</span>
 											<a href="#" class="btn btn-danger fileinput-exists" data-dismiss="fileinput">Remove</a>
-										</div> -->
+										</div>
                                                 
                                     </div>
 
@@ -113,8 +111,8 @@
                                             <input type="email" placeholder="Enter email" name="Email">
                                             <label>Telephone *</label>
                                             <input type="text" name="Telephone">
-                                            <label>Promotion</label>
-                                            <input type="password" name="Telephone">
+                                            <label>mot de passe</label>
+                                            <input type="password" class="form-control" id="firstname">
                                           
 									</div>
                                     <input type="submit" class="btn btn-primary btn-lg" value="ENREGISTRER" name="enregistrer">
@@ -133,16 +131,16 @@
                                                 <strong>Nom</strong>
                                             </th>
                                             <th class="text-center">
-                                                <strong>Post-nom</strong>
+                                                <strong>Nom d'utilsateur</strong>
                                             </th>
                                             <th class="text-center">
-                                                <strong>Promotion</strong>
-                                            </th>
-                                            <th class="text-center">
-                                                <strong>Section</strong>
-                                            </th>
+                                                <strong>Email</strong>
+                                            </th>                                            
                                             <th class="text-center">
                                                 <strong>Telephone</strong>
+                                            </th>
+                                            <th class="text-center">
+                                                <strong>Mot de passe</strong>
                                             </th>
                                             <th class="text-center">
                                                 <strong>Action</strong>
@@ -154,11 +152,10 @@
                                         <tr>
                                             <td><?=$ligne['ID'];?></td>
                                             <td><?=$ligne['NOM'];?></td>
-                                            <td><?=$ligne['POST_NOM'];?></td>
-                                            <td><?=$ligne['PROMOTION'];?></td>
-                                            <td> <?=$ligne['SECTION'];?></td>
-                                            
+                                            <td><?=$ligne['USERNAME'];?></td>
+                                            <td><?=$ligne['EMAIL'];?></td>
                                             <td><?=$ligne['TELEPHONE'];?></td>
+                                            <td><?=(md5($ligne['TELEPHONE']));?></td>
                                             <td class="text-center">
 												<button type="button" class="btn btn-sm btn-success"><i class="fa fa-edit"></i></button>
 												<button type="button" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></button>
