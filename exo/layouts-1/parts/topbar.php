@@ -24,8 +24,22 @@
 							
 							<li class="dropdown avtar-dropdown">
 								<a class="dropdown-toggle" data-toggle="dropdown" href="#">
-									<img alt="" class="rounded-circle" src="assets/img/avtar-2.png" width="30">
-									John Doe
+								<?php     
+									$service = $db->prepare('SELECT * FROM utilisateur WHERE ID=:ID');
+									$service->execute(array(
+									'ID' => $_SESSION['user']['ID']
+									));  
+									$don=$service->fetchAll(PDO::FETCH_OBJ);
+									foreach($don as $s):  
+								?>
+									<img alt="" class="rounded-circle" src="images/<?=$s->PHOTO;?>">
+                        		<?php endforeach ?>
+							 <?php 
+                                if ($_SESSION['user']['USERNAME'] !== array()) {
+                                   $users = $_SESSION['user']['USERNAME'];
+                                   echo "$users";
+                                }
+                             ?>
 								</a>
 								<ul class="dropdown-menu top-dropdown">
 									<li>

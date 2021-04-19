@@ -4,8 +4,24 @@
 				
 					<div class="card-body border-bottom text-center nav-profile">
 						<div class="notify setpos"> <span class="heartbit"></span> <span class="point"></span> </div>
-                        <img alt="profile" class="margin-b-10  " src="assets/img/avtar-2.png" width="80">
-                        <p class="lead margin-b-0 toggle-none">John Doe</p>
+                        <?php     
+                             $service = $db->prepare('SELECT * FROM utilisateur WHERE ID=:ID');
+                            $service->execute(array(
+                            'ID' => $_SESSION['user']['ID']
+                            ));  
+                            $don=$service->fetchAll(PDO::FETCH_OBJ);
+                            foreach($don as $s):  
+                        ?>
+                        <img alt="profile" class="margin-b-10" src="images/<?=$s->PHOTO;?>" width="80">
+                        <?php endforeach ?>
+                        <p class="lead margin-b-0 toggle-none"> 
+                        <?php 
+                                if ($_SESSION['user']['USERNAME'] !== array()) {
+                                   $users = $_SESSION['user']['USERNAME'];
+                                   echo "$users";
+                                }
+                             ?>
+                             </p>
                         <p class="text-muted mv-0 toggle-none">Welcome</p>						
                     </div>
 					
@@ -93,3 +109,4 @@
                 </div>
             </div>
         </div>
+        
