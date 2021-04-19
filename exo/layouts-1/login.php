@@ -49,7 +49,7 @@
                                     <div class="form-group">
                                         <label for="exampleInputPassword1">mot de passe</label>
                                         <div class="group-icon">
-                                        <input id="exampleInputPassword1" type="password" placeholder="*******" class="form-control" name="motdepasse">
+                                        <input id="exampleInputPassword1" type="password" placeholder="" class="form-control" name="motdepasse">
                                         <span class="icon-lock text-muted icon-input"></span>
                                         </div>
                                     </div>
@@ -61,7 +61,7 @@
 											</div>
                                         </div>
                                         <div class="float-right">
-                                            <button type="submit" class="btn btn-block btn-primary btn-rounded box-shadow">Login</button>
+                                        <button type="submit" class="btn btn-block btn-primary btn-rounded box-shadow">Login</button>
                                         </div>
                                     </div>
                                     <hr>

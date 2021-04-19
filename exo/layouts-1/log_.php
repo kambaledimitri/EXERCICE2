@@ -4,14 +4,14 @@
 
  if (isset($_POST['nom_user']) && isset($_POST['motdepasse'])) {
  	
- 	$n_user=htmlspecialchars($_POST['nom_user']);
- 	$m_depasse=htmlspecialchars($_POST['motdepasse']);
+ 	$nom_user=htmlspecialchars($_POST['nom_user']);
+ 	$mot_depasse=htmlspecialchars($_POST['motdepasse']);
 
- 	$req=$db->prepare('SELECT * FROM admin WHERE username=:username AND password=:password');
+ 	$req=$db->prepare('SELECT * FROM utilisateur WHERE USERNAME=:USERNAME AND MOTDEPASSE=:MOTDEPASSE');
 
  	$req->execute(array(
- 	'username' => $n_user,
- 	'password' => $m_depasse ));
+ 	'USERNAME' => $nom_user,
+ 	'MOTDEPASSE' => $mot_depasse ));
 
  	$res=$req->fetchAll(PDO::FETCH_OBJ);
 
