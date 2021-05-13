@@ -2,8 +2,8 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>FixedPlus - Bootstrap Admin Dashboard Template</title>
-		<link rel="icon" type="image/png" sizes="16x16" href="assets/img/icon.png">
+        <title>Bootstrap Admin Dashboard Template</title>
+		<link rel="icon" type="image/png" sizes="16x16" href="assets/img/iconv.png">
 		
         <!-- Common Plugins -->
         <link href="assets/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">

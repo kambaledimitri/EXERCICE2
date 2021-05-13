@@ -9,25 +9,7 @@
 <html lang="en">
 
 <!-- Mirrored from www.aksisweb.com/theme/fixed/layouts-1/form-basic.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 02 Feb 2021 22:28:30 GMT -->
-<head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>FixedPlus - Bootstrap Admin Dashboard Template</title>
-
-        <!-- Common Plugins -->
-        <link href="assets/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-		
-        <!-- Custom Css-->
-        <link href="assets/scss/style.css" rel="stylesheet">
-		
-        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-        <!--[if lt IE 9]>
-          <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-        <![endif]-->
-    </head>
+        <?php include('parts/head.php')?>
     <body>
 
 			<!-- ============================================================== -->
@@ -72,73 +54,17 @@
 			</div>
 		</div>
 
+        
         <section class="main-content">
             <div class="row">
-                <div class="col-sm-12">
-                    
+                <div class="col-md-12">
                     <div class="card">
-                       
-                        <div class="card-body">
-                            <form method="POST" action="Etudiant.php">
-                                <div class="row">
-                                    <div class="col-sm-6">
-                                        <div class="form-group ">
-                                            <label>Nom</label>
-                                            <input type="text" placeholder="Nom" name="Nom">
-                                            <label>Post-Nom</label>
-                                            <input type="text" placeholder="Post-non" name="Post_Nom">
-                                            <label>Prenom</label>
-                                            <input type="text" placeholder="Prenom" name="Prenom">
-                                            <label>Sexe</label>
-                                            <select class="form-control" type="Text" name="Sexe">
-                                                <option >HOMME</option>
-                                                <option >FEMME</option>
-                                            </select>
-                                            
-                                        </div>
-                                        <!-- <label>IMAGE</label>
-										<div class="fileinput-new" data-provides="fileinput">
-										  <div class="fileinput-preview" data-trigger="fileinput" style="width: 100px; height:80px;"></div>
-											<span class="btn btn-primary  btn-file">
-												<span class="fileinput-new">Select</span>
-												<span class="fileinput-exists">Change</span>
-												<input type="file" name="IMAGE">
-											</span>
-											<a href="#" class="btn btn-danger fileinput-exists" data-dismiss="fileinput">Remove</a>
-										</div> -->
-                                                
-                                    </div>
-
-                                    <div class="col-sm-6">
-                                        <div class="form-group">
-                                           
-                                            <label>Email address</label>
-                                            <input type="email" placeholder="Enter email" name="Email">
-                                            <label>Telephone *</label>
-                                            <input type="text" name="Telephone">
-                                            <label>Promotion</label>
-                                            <select class="form-control" type="Text" name="Promotion">
-                                                <option >PREMIERE</option>
-                                                <option >DEUXIEME</option>
-                                                <option >TROISIEME</option>
-                                                <option >QUATRIEME</option>
-                                                <option >CINQIEME</option>
-                                                <option >SIXIEME</option>
-                                            </select>
-                                            <label>Section</label>
-                                            <select class="form-control" type="Text" name="Section">
-                                                <option >LATIN-PHILO</option>
-                                                <option >MATH-PHISIQUE</option>
-                                                <option >BIOLOGIE-CHIMIE</option>
-                                            </select>
-                                            
-										
-									</div>
-                                    <input type="submit" class="btn btn-primary btn-lg" value="ENREGISTRER" name="enregistrer">
-                                        </div>
-                                    </div>
-								</div>
-                               
+                        <div class="card-header card-default">
+                           
+                            <div class="float-right mt-10">
+								<a href="#" class="btn btn-success margin-r-5 btn-rounded box-shadow btn-icon"data-toggle="modal" data-target="#loginModal"><i class="fa fa-plus"></i> Add Member</a>
+						    </div>
+                        </div>
                                 <div class="card-body">
                                 <table id="datatable2" class="table table-striped dt-responsive nowrap">
                                     <thead>
@@ -201,7 +127,75 @@
         <!-- ============================================================== -->
 		<!-- 						Content End		 						-->
 		<!-- ============================================================== -->
-
+        <div class="modal fade" id="loginModal">
+				  <div class="modal-dialog" role="document">
+					<div class="modal-content">
+					  <div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true" class="fa fa-times"></span></button>
+						<h5 class="modal-title" id="exampleModalLabel">Add Member</h5>
+					  </div>
+					  <div class="modal-body">
+                            <form  method="POST" action="TEAM.php" enctype="multipart/form-data">
+                                
+                            <label>Nom</label>
+                                            <input type="text" placeholder="Nom" name="Nom">
+                                            <label>Post-Nom</label>
+                                            <input type="text" placeholder="Post-non" name="Post_Nom">
+                                            <label>Prenom</label>
+                                            <input type="text" placeholder="Prenom" name="Prenom">
+                                            <label>Sexe</label>
+                                            <select class="form-control" type="Text" name="Sexe">
+                                                <option >HOMME</option>
+                                                <option >FEMME</option>
+                                            </select>
+                                            <label>Email address</label>
+                                            <input type="email" placeholder="Enter email" name="Email">
+                                            <label>Telephone *</label>
+                                            <input type="text" name="Telephone">
+                                            <label>Promotion</label>
+                                            <select class="form-control" type="Text" name="Promotion">
+                                                <option >PREMIERE</option>
+                                                <option >DEUXIEME</option>
+                                                <option >TROISIEME</option>
+                                                <option >QUATRIEME</option>
+                                                <option >CINQIEME</option>
+                                                <option >SIXIEME</option>
+                                            </select>
+                                            <label>Section</label>
+                                            <select class="form-control" type="Text" name="Section">
+                                                <option >LATIN-PHILO</option>
+                                                <option >MATH-PHISIQUE</option>
+                                                <option >BIOLOGIE-CHIMIE</option>
+                                            </select>
+                                            <label>IMAGE</label>
+										<div class="fileinput-new" data-provides="fileinput">
+										  <div class="fileinput-preview" data-trigger="fileinput" style="width: 100px; height:80px;"></div>
+											<span class="btn btn-primary  btn-file">
+												<span class="fileinput-new">Select</span>
+												<span class="fileinput-exists">Change</span>
+												<input type="file" name="IMAGE">
+											</span>
+											<a href="#" class="btn btn-danger fileinput-exists" data-dismiss="fileinput">Remove</a>
+                                        </div>
+                                       
+										</div>
+                                                
+                                    </div>
+										
+									</div>
+                                    <input type="submit" class="btn btn-primary btn-lg" value="ENREGISTRER" name="enregistrer">
+                                        </div>
+                                    </div>
+                                <div class="clearfix">
+                                    <input class="btn btn-primary float-right" type="submit" name="" value="AJOUTER">
+                                </div>
+                            </form>
+                            
+                           
+					  </div>
+					</div>
+				  </div>
+				</div>
         <!--Common plugins-->
         <script src="assets/lib/jquery/dist/jquery.min.js"></script>
 		<script src="assets/lib/bootstrap/js/popper.min.js"></script>
