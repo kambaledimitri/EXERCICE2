@@ -54,7 +54,7 @@
 			</div>
 		</div>
 
-                                   
+        <section class="main-content">                            
             <div class="row">
                 <div class="col-md-12">
                     <div class="card">
@@ -170,9 +170,7 @@
                                     <input type="submit" class="btn btn-primary btn-lg" value="ENREGISTRER" name="enregistrer">
                                         </div>
                                     </div>
-                                <div class="clearfix">
-                                    <input class="btn btn-primary float-right" type="submit" name="" value="AJOUTER">
-                                </div>
+                                
                             </form>
                             
                            
