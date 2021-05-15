@@ -93,8 +93,78 @@
                                         </tr>
                                     </thead>
                                     <?php while ($ligne = $recuperation->fetch()) {?>
+                                       
                                     <tbody>
                                         <tr>
+                                        <div class="modal fade" id="login<?=$ligne['ID'];?>">
+				  <div class="modal-dialog" role="document">
+					<div class="modal-content">
+					  <div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true" class="fa fa-times"></span></button>
+						<h5 class="modal-title" id="exampleModalLabel">Add Member</h5>
+					  </div>
+					  <div class="modal-body">
+                            <form  method="POST" action="TEAM.php" enctype="multipart/form-data">
+                                
+                            <label>Nom</label>
+                                            <input type="text" placeholder="Nom" name="Nom" value="<?=$ligne['NOM'];?>">
+                                            <label>Post-Nom</label>
+                                            <input type="text" placeholder="Post-non" name="Post_Nom">
+                                            <label>Prenom</label>
+                                            <input type="text" placeholder="Prenom" name="Prenom">
+                                            <label>Sexe</label>
+                                            <select class="form-control" type="Text" name="Sexe">
+                                                <option >HOMME</option>
+                                                <option >FEMME</option>
+                                            </select>
+                                            <label>Email address</label>
+                                            <input type="email" placeholder="Enter email" name="Email">
+                                            <label>Telephone *</label>
+                                            <input type="text" name="Telephone">
+                                            <label>Promotion</label>
+                                            <select class="form-control" type="Text" name="Promotion">
+                                                <option >PREMIERE</option>
+                                                <option >DEUXIEME</option>
+                                                <option >TROISIEME</option>
+                                                <option >QUATRIEME</option>
+                                                <option >CINQIEME</option>
+                                                <option >SIXIEME</option>
+                                            </select>
+                                            <label>Section</label>
+                                            <select class="form-control" type="Text" name="Section">
+                                                <option >LATIN-PHILO</option>
+                                                <option >MATH-PHISIQUE</option>
+                                                <option >BIOLOGIE-CHIMIE</option>
+                                            </select>
+                                            <label>IMAGE</label>
+										<div class="fileinput-new" data-provides="fileinput">
+										  <div class="fileinput-preview" data-trigger="fileinput" style="width: 100px; height:80px;"></div>
+											<span class="btn btn-primary  btn-file">
+												<span class="fileinput-new">Select</span>
+												<span class="fileinput-exists">Change</span>
+												<input type="file" name="IMAGE">
+											</span>
+											<a href="#" class="btn btn-danger fileinput-exists" data-dismiss="fileinput">Remove</a>
+                                        </div>
+                                       
+										</div>
+                                                
+                                    </div>
+										
+									</div>
+                                    <input type="submit" class="btn btn-primary btn-lg" value="ENREGISTRER" name="enregistrer">
+                                        </div>
+                                    </div>
+                                <!-- <div class="clearfix">
+                                    <input class="btn btn-primary float-right" type="submit" name="" value="AJOUTER">
+                                </div> -->
+                            </form>
+                            
+                           
+					  </div>
+					</div>
+				  </div>
+				</div>
                                             <td><?=$ligne['ID'];?></td>
                                             <td><?=$ligne['NOM'];?></td>
                                             <td><?=$ligne['POST_NOM'];?></td>
@@ -103,7 +173,8 @@
                                             
                                             <td><?=$ligne['TELEPHONE'];?></td>
                                             <td class="text-center">
-												<button type="button" class="btn btn-sm btn-success"><i class="fa fa-edit"></i></button>
+                                            <a href="#" class="btn btn-sm btn-succes"data-toggle="modal" data-target="#login<?=$ligne['ID'];?>"><i class="fa fa-edit"></i></a>
+											
 												<button type="button" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></button>
                                             </td>
                                         </tr>
@@ -186,9 +257,7 @@
                                     <input type="submit" class="btn btn-primary btn-lg" value="ENREGISTRER" name="enregistrer">
                                         </div>
                                     </div>
-                                <div class="clearfix">
-                                    <input class="btn btn-primary float-right" type="submit" name="" value="AJOUTER">
-                                </div>
+                               
                             </form>
                             
                            
