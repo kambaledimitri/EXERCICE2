@@ -96,7 +96,7 @@
                                        
                                     <tbody>
                                         <tr>
-                                        <div class="modal fade" id="login<?=$ligne['ID'];?>">
+                 <div class="modal fade" id="modalmod<?=$ligne['ID'];?>">
 				  <div class="modal-dialog" role="document">
 					<div class="modal-content">
 					  <div class="modal-header">
@@ -109,18 +109,18 @@
                             <label>Nom</label>
                                             <input type="text" placeholder="Nom" name="Nom" value="<?=$ligne['NOM'];?>">
                                             <label>Post-Nom</label>
-                                            <input type="text" placeholder="Post-non" name="Post_Nom">
+                                            <input type="text" placeholder="Post-non" name="Post_Nom" value="<?=$ligne['POST_NOM'];?>">
                                             <label>Prenom</label>
-                                            <input type="text" placeholder="Prenom" name="Prenom">
+                                            <input type="text" placeholder="Prenom" name="Prenom" value="<?=$ligne['PRENOM'];?>">
                                             <label>Sexe</label>
                                             <select class="form-control" type="Text" name="Sexe">
                                                 <option >HOMME</option>
                                                 <option >FEMME</option>
                                             </select>
                                             <label>Email address</label>
-                                            <input type="email" placeholder="Enter email" name="Email">
+                                            <input type="email" placeholder="Enter email" name="Email" value="<?=$ligne['EMAIL'];?>">
                                             <label>Telephone *</label>
-                                            <input type="text" name="Telephone">
+                                            <input type="text" name="Telephone" value="<?=$ligne['TELEPHONE'];?>">
                                             <label>Promotion</label>
                                             <select class="form-control" type="Text" name="Promotion">
                                                 <option >PREMIERE</option>
@@ -152,12 +152,10 @@
                                     </div>
 										
 									</div>
-                                    <input type="submit" class="btn btn-primary btn-lg" value="ENREGISTRER" name="enregistrer">
+                                    <input type="submit" class="btn btn-primary btn-lg" value="MODIFIER" name="modifier">
                                         </div>
                                     </div>
-                                <!-- <div class="clearfix">
-                                    <input class="btn btn-primary float-right" type="submit" name="" value="AJOUTER">
-                                </div> -->
+                                
                             </form>
                             
                            
@@ -173,7 +171,7 @@
                                             
                                             <td><?=$ligne['TELEPHONE'];?></td>
                                             <td class="text-center">
-                                            <a href="#" class="btn btn-sm btn-succes"data-toggle="modal" data-target="#login<?=$ligne['ID'];?>"><i class="fa fa-edit"></i></a>
+                                            <a href="#" class="btn btn-sm btn-succes"data-toggle="modal" data-target="#modalmod<?=$ligne['ID'];?>"><i class="fa fa-edit"></i></a>
 											
 												<button type="button" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></button>
                                             </td>
@@ -206,7 +204,7 @@
 						<h5 class="modal-title" id="exampleModalLabel">Add Member</h5>
 					  </div>
 					  <div class="modal-body">
-                            <form  method="POST" action="TEAM.php" enctype="multipart/form-data">
+                            <form  method="POST" action="Etudiant.php" enctype="multipart/form-data">
                                 
                             <label>Nom</label>
                                             <input type="text" placeholder="Nom" name="Nom">

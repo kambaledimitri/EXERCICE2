@@ -72,6 +72,10 @@
                                <li class="nav-item"><a class="nav-link" href="ETUDIANT_.php">ETUDIANTS</a></li>
 							</ul>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link"href="Enseignant.php"" aria-expanded="false"><i class="fa fa-file"></i> <span class="toggle-none">ENSEIGNANT<span class="fa arrow"></span></span></a>
+                            
+                        </li>
                        
                         <li class="nav-item">
                             <a class="nav-link" href="javascript: void(0);" aria-expanded="false"><i class="fa fa-table"></i> <span class="toggle-none">Tables <span class="fa arrow"></span></span></a>

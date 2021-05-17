@@ -47,9 +47,9 @@
 			<div class="col-lg-6 align-self-center ">
 			  <h2>Basic elements</h2>
 				<ol class="breadcrumb">
-					<li class="breadcrumb-item"><a href="#">Home</a></li>
-					<li class="breadcrumb-item"><a href="#">Form</a></li>
-					<li class="breadcrumb-item active">Basic elements</li>		
+					<li class="breadcrumb-item"><a href="#">Accueil</a></li>
+					<li class="breadcrumb-item"><a href="#">Publication</a></li>
+					<li class="breadcrumb-item active">Utilisateur</li>		
 				</ol>
 			</div>
 		</div>
